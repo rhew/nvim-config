@@ -128,6 +128,12 @@ nnoremap <leader>ln :lua vim.lsp.diagnostic.goto_next()<CR>
 " https://github.com/nvim-telescope/telescope.nvim#pickers
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+
+" lsp pickers
+
+nnoremap <Leader>fd :lua require'telescope.builtin'.lsp_definitions{}<cr>
+nnoremap <Leader>fi :lua require'telescope.builtin'.lsp_implementations{}<cr>
 nnoremap <Leader>fr :lua require'telescope.builtin'.lsp_references{}<cr>
-nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
+nnoremap <Leader>fws :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
 nnoremap <Leader>fca :lua require'telescope.builtin'.lsp_code_actions{}<cr>
+nnoremap <Leader>fwd :lua require'telescope.builtin'.lsp_workspace_diagnostics{}<cr>
