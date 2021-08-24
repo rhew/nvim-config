@@ -77,6 +77,13 @@ hi SpellLocal cterm=underline ctermfg=red
 hi SpellRare cterm=underline ctermfg=red
 
 
+" Mac specific plantuml viewer
+" Use :PlantUML or <leader> P:
+command! -range PlantUML execute ':<line1>,<line2> w !plantuml -pipe | open -a Preview.app -f'
+map <leader>pu :PlantUML<CR>
+
+
+
 """
 " lsp/completion config
 """
