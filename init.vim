@@ -95,6 +95,9 @@ lua require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
 " Do this: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
 lua require'lspconfig'.jdtls.setup{on_attach=require'completion'.on_attach}
 
+" bash
+lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
+
 
 " create a local list of errors when opening a buffer. :lnext :lprev :lopen
 fun! LspLocationList()
