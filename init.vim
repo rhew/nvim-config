@@ -86,7 +86,6 @@ command! -range PlantUML execute ':<line1>,<line2> w !plantuml -pipe | open -a P
 map <leader>pu :PlantUML<CR>
 
 
-
 """
 " lsp/completion config
 """
@@ -140,7 +139,7 @@ nnoremap <leader>ln :lua vim.lsp.diagnostic.goto_next()<CR>
 
 " https://github.com/nvim-telescope/telescope.nvim#pickers
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>  " mac: brew install rg
 
 " lsp pickers
 
