@@ -3,13 +3,15 @@ set incsearch
 set scrolloff=8
 set nobackup nowritebackup
 set splitbelow splitright
+set noautoindent nocindent nosmartindent indentexpr=
+" disable auto-comment
+set formatoptions-=cro
 
 " https://github.com/changemewtf/no_plugins/blob/master/no_plugins.vim
 " FINDING FILES:
 " Search down into subfolders
 " Provides tab-completion for all file-related tasks
 set path+=**
-
 " :find  Display all matching files when we tab complete
 set wildmenu
 set wildignore+=**/*.pyc
@@ -41,9 +43,9 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'gruvbox-community/gruvbox'
 
 " lsp and completion
-Plug 'neovim/nvim-lspconfig'
+Plug 'neovim/nvim-lspconfig' " Start language servers
 Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
-Plug 'nvim-lua/completion-nvim'
+Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
 " java refactoring
 " recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
 " Plug 'mfussenegger/nvim-jdtls'
