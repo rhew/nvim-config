@@ -51,6 +51,9 @@ Plug 'nvim-lua/completion-nvim'
 " telescope
 Plug 'nvim-lua/plenary.nvim'
 Plug 'nvim-telescope/telescope.nvim'
+
+" ALE
+Plug 'dense-analysis/ale'
 call plug#end()
 
 
@@ -147,3 +150,12 @@ nnoremap <Leader>fr :lua require'telescope.builtin'.lsp_references{}<cr>
 nnoremap <Leader>fws :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
 nnoremap <Leader>fca :lua require'telescope.builtin'.lsp_code_actions{}<cr>
 nnoremap <Leader>fwd :lua require'telescope.builtin'.lsp_workspace_diagnostics{}<cr>
+
+
+"""
+" dense-analyss/ale options
+"""
+
+map <leader>at :ALEToggle<CR>
+let g:ale_yaml_yamllint_options = '-d "{extends: default, rules: {line-length: {max: 100}}}"'
+let b:ale_fix_on_save = 0
