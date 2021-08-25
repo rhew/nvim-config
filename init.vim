@@ -152,6 +152,10 @@ nnoremap <Leader>fws :lua require'telescope.builtin'.lsp_dynamic_workspace_symbo
 nnoremap <Leader>fca :lua require'telescope.builtin'.lsp_code_actions{}<cr>
 nnoremap <Leader>fwd :lua require'telescope.builtin'.lsp_workspace_diagnostics{}<cr>
 
+" git pickers
+
+nnoremap <Leader>fgs :lua require'telescope.builtin'.git_status{}<cr>
+nnoremap <Leader>fgc :lua require'telescope.builtin'.git_commits{}<cr>
 
 """
 " dense-analyss/ale options
