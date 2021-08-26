@@ -89,19 +89,23 @@ map <leader>pu :PlantUML<CR>
 
 
 """
-" lsp/completion config
+" kabouzeid/nvim-lspinstall  and nvim-lua/completion-nvim config
 """
 
-" golang
-lua require'lspconfig'.gopls.setup{on_attach=require'completion'.on_attach}
+lua << ENDLUA
+-- Register configs for installed servers in lspconfig.
+require'lspinstall'.setup()
 
-" java
-" Do this: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
-lua require'lspconfig'.jdtls.setup{on_attach=require'completion'.on_attach}
+-- Get list of installed servers and then setup each
+-- server with lspconfig as usual.
+local servers = require'lspinstall'.installed_servers()
+for _, server in pairs(servers) do
+  require'lspconfig'[server].setup{on_attach=require'completion'.on_attach}
+end
+ENDLUA
 
-" bash
-lua require'lspconfig'.bashls.setup{on_attach=require'completion'.on_attach}
-
+" yamlls doesn't start with the above code :(
+lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
 
 " create a local list of errors when opening a buffer. :lnext :lprev :lopen
 fun! LspLocationList()
