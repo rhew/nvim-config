@@ -22,11 +22,11 @@ set wildmode=longest,list,full
 " vim remaps
 
 let mapleader = " "
-" faster windowing
-map <leader>h :wincmd h<CR>
-map <leader>j :wincmd j<CR>
-map <leader>k :wincmd k<CR>
-map <leader>l :wincmd l<CR>
+" switch windows when in a terminal
+tnoremap <C-w>h <C-\><C-n><C-w>h
+tnoremap <C-w>j <C-\><C-n><C-w>j
+tnoremap <C-w>k <C-\><C-n><C-w>k
+tnoremap <C-w>l <C-\><C-n><C-w>l
 " remaps to keep centered after search or join
 nnoremap n nzzzv
 nnoremap N Nzzzv
