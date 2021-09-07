@@ -127,6 +127,8 @@ set completeopt=menuone,noinsert,noselect
 set shortmess+=c
 
 
+nnoremap <C-]> :lua vim.lsp.buf.definition()<CR>
+nnoremap gd :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>ld :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>li :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>lsh :lua vim.lsp.buf.signature_help()<CR>
@@ -145,14 +147,15 @@ nnoremap <leader>ln :lua vim.lsp.diagnostic.goto_next()<CR>
 
 " https://github.com/nvim-telescope/telescope.nvim#pickers
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
-nnoremap <leader>fg <cmd>Telescope live_grep<cr>  " mac: brew install rg
+" mac: brew install rg
+nnoremap <leader>fg <cmd>Telescope live_grep<cr>
 
 " lsp pickers
 
 nnoremap <Leader>fd :lua require'telescope.builtin'.lsp_definitions{}<cr>
 nnoremap <Leader>fi :lua require'telescope.builtin'.lsp_implementations{}<cr>
 nnoremap <Leader>fr :lua require'telescope.builtin'.lsp_references{}<cr>
-nnoremap <Leader>fws :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
+nnoremap <Leader>fs :lua require'telescope.builtin'.lsp_dynamic_workspace_symbols{}<cr>
 nnoremap <Leader>fca :lua require'telescope.builtin'.lsp_code_actions{}<cr>
 nnoremap <Leader>fwd :lua require'telescope.builtin'.lsp_workspace_diagnostics{}<cr>
 
