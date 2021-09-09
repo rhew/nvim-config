@@ -39,23 +39,23 @@ vnoremap K :m '<-2<CR>gv=gv
 " plugins
 " Install vim-plug manager: https://github.com/junegunn/vim-plug#installation
 call plug#begin('~/.config/nvim/plugged')
-" gruvbox
-Plug 'gruvbox-community/gruvbox'
+    " gruvbox
+    Plug 'gruvbox-community/gruvbox'
 
-" lsp and completion
-Plug 'neovim/nvim-lspconfig' " Start language servers
-Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
-Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
-" java refactoring
-" recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
-" Plug 'mfussenegger/nvim-jdtls'
+    " lsp and completion
+    Plug 'neovim/nvim-lspconfig' " Start language servers
+    Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
+    Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
+    " java refactoring
+    " recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
+    " Plug 'mfussenegger/nvim-jdtls'
 
-" telescope
-Plug 'nvim-lua/plenary.nvim'
-Plug 'nvim-telescope/telescope.nvim'
+    " telescope
+    Plug 'nvim-lua/plenary.nvim'
+    Plug 'nvim-telescope/telescope.nvim'
 
-" ALE
-Plug 'dense-analysis/ale'
+    " ALE
+    Plug 'dense-analysis/ale'
 call plug#end()
 
 
@@ -129,7 +129,6 @@ set shortmess+=c
 
 nnoremap <C-]> :lua vim.lsp.buf.definition()<CR>
 nnoremap gd :lua vim.lsp.buf.definition()<CR>
-nnoremap <leader>ld :lua vim.lsp.buf.definition()<CR>
 nnoremap <leader>li :lua vim.lsp.buf.implementation()<CR>
 nnoremap <leader>lsh :lua vim.lsp.buf.signature_help()<CR>
 nnoremap <leader>lrr :lua vim.lsp.buf.references()<CR>
