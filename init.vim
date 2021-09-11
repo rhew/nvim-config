@@ -137,6 +137,7 @@ nnoremap <leader>lh :lua vim.lsp.buf.hover()<CR>
 nnoremap <leader>lca :lua vim.lsp.buf.code_action()<CR>
 nnoremap <leader>lsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
 nnoremap <leader>ln :lua vim.lsp.diagnostic.goto_next()<CR>
+nnoremap <leader>lp :lua vim.lsp.diagnostic.goto_prev()<CR>
 " nnoremap <leader>lll :call LspLocationList()<CR>
 
 
