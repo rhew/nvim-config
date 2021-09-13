@@ -56,6 +56,9 @@ call plug#begin('~/.config/nvim/plugged')
 
     " ALE
     Plug 'dense-analysis/ale'
+
+    " Fugitive
+    Plug 'tpope/vim-fugitive'
 call plug#end()
 
 
