@@ -148,6 +148,9 @@ nnoremap <leader>lp :lua vim.lsp.diagnostic.goto_prev()<CR>
 " Telescope config
 """
 
+" override default word selection binding
+nnoremap z= <cmd>Telescope spell_suggest<cr>
+
 " https://github.com/nvim-telescope/telescope.nvim#pickers
 nnoremap <leader>ff <cmd>Telescope find_files<cr>
 " mac: brew install rg
