@@ -83,14 +83,6 @@ hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 " spell
 set spell spelllang=en_us
 syn match myExCapitalWords +\<[A-Z]\w*\>+ contains=@NoSpell
-hi clear SpellBad
-hi clear SpellCap
-hi clear SpellLocal
-hi clear SpellRare
-hi SpellBad cterm=underline ctermfg=red
-hi SpellCap cterm=underline ctermfg=red
-hi SpellLocal cterm=underline ctermfg=red
-hi SpellRare cterm=underline ctermfg=red
 
 
 " Mac specific plantuml viewer
