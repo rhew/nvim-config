@@ -59,6 +59,14 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Fugitive
     Plug 'tpope/vim-fugitive'
+
+    " Devicons
+    Plug 'kyazdani42/nvim-web-devicons'
+
+    " markdown-preview
+    Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
+
+    Plug 'junegunn/limelight.vim'
 call plug#end()
 
 
@@ -177,3 +185,14 @@ nnoremap <Leader>fgc :lua require'telescope.builtin'.git_commits{}<cr>
 map <leader>at :ALEToggle<CR>
 let g:ale_yaml_yamllint_options = '-d "{extends: default, rules: {line-length: {max: 100}}}"'
 let b:ale_fix_on_save = 0
+
+"""
+" markdown-preview options
+"""
+let g:mkdp_browser = 'Firefox'
+
+
+"""
+" Limelight config
+"""
+let g:limelight_conceal_ctermfg = 'darkgray'
