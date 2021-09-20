@@ -188,3 +188,4 @@ let g:mkdp_browser = 'Firefox'
 " Limelight config
 """
 let g:limelight_conceal_ctermfg = 'darkgray'
+nmap <Leader>h :Limelight!!<CR>
