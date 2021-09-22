@@ -66,7 +66,14 @@ call plug#begin('~/.config/nvim/plugged')
     " markdown-preview
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
+    " limelight - highligting
     Plug 'junegunn/limelight.vim'
+
+    " Screenplay syntax
+    Plug 'vim-scripts/fountain.vim'
+
+    " HTTP syntax and client (cURL)
+    Plug 'nicwest/vim-http'
 call plug#end()
 
 
@@ -148,6 +155,10 @@ nnoremap <leader>lp :lua vim.lsp.diagnostic.goto_prev()<CR>
 " Telescope config
 """
 
+lua << EOF
+require('telescope').setup{ defaults = { file_ignore_patterns = {"vendor"} } }
+EOF
+
 " override default word selection binding
 nnoremap z= <cmd>Telescope spell_suggest<cr>
 
@@ -189,3 +200,8 @@ let g:mkdp_browser = 'Firefox'
 """
 let g:limelight_conceal_ctermfg = 'darkgray'
 nmap <Leader>h :Limelight!!<CR>
+
+"""
+" Fountain config
+"""
+au BufRead,BufNewFile *.fountain set filetype=fountain
