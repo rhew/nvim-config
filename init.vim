@@ -64,15 +64,18 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'kyazdani42/nvim-web-devicons'
 
     " markdown-preview
+    " :MarkdownPreview
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
     " limelight - highligting
+    " <leader> h toggles
     Plug 'junegunn/limelight.vim'
 
     " Screenplay syntax
     Plug 'vim-scripts/fountain.vim'
 
     " HTTP syntax and client (cURL)
+    " :Http sends the current .http buffer
     Plug 'nicwest/vim-http'
 call plug#end()
 
