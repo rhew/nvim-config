@@ -46,6 +46,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'neovim/nvim-lspconfig' " Start language servers
     Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
     Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
+    " try this Plug 'hrsh7th/nvim-cmp'
+
     " java refactoring
     " recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
     " Plug 'mfussenegger/nvim-jdtls'
