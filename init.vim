@@ -42,11 +42,17 @@ call plug#begin('~/.config/nvim/plugged')
     " gruvbox
     Plug 'gruvbox-community/gruvbox'
 
-    " lsp and completion
+    " lsp
     Plug 'neovim/nvim-lspconfig' " Start language servers
     Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
-    Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
-    " try this Plug 'hrsh7th/nvim-cmp'
+
+    " completion
+    " Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
+    Plug 'hrsh7th/nvim-cmp'
+    Plug 'onsails/lspkind-nvim'
+    Plug 'hrsh7th/cmp-buffer'
+    Plug 'hrsh7th/cmp-path'
+    Plug 'hrsh7th/cmp-nvim-lsp'
 
     " java refactoring
     " recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
@@ -115,12 +121,69 @@ require'lspinstall'.setup()
 -- server with lspconfig as usual.
 local servers = require'lspinstall'.installed_servers()
 for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{on_attach=require'completion'.on_attach}
+  require'lspconfig'[server].setup{}
 end
 ENDLUA
 
+
+"""
+" Completion
+"""
+
+lua << ENDLUA
+local cmp = require "cmp"
+local lspkind = require('lspkind')
+cmp.setup {
+  mapping = {
+    ['<C-p>'] = cmp.mapping.select_prev_item(),
+    ['<C-n>'] = cmp.mapping.select_next_item(),
+    ['<C-d>'] = cmp.mapping.scroll_docs(-4),
+    ['<C-f>'] = cmp.mapping.scroll_docs(4),
+    ['<C-Space>'] = cmp.mapping.complete(),
+    ['<C-e>'] = cmp.mapping.close(),
+    ['<CR>'] = cmp.mapping.confirm {
+      behavior = cmp.ConfirmBehavior.Replace,
+      select = true,
+    },
+    ['<Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_next_item()
+      else
+        fallback()
+      end
+    end,
+    ['<S-Tab>'] = function(fallback)
+      if cmp.visible() then
+        cmp.select_prev_item()
+      else
+        fallback()
+      end
+    end,
+  },
+  sources = { -- ordered by priority
+    { name = "buffer" },
+    { name = "path" },
+    { name = "nvim_lsp" },
+  },
+  formatting = {
+    format = lspkind.cmp_format {
+      with_text = true,
+      menu = {
+        buffer   = "[buf]",
+        nvim_lsp = "[LSP]",
+        path     = "[path]",
+      }
+    }
+}
+}
+
+local capabilities = vim.lsp.protocol.make_client_capabilities()
+capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+ENDLUA
+
+
 " yamlls doesn't start with the above code :(
-lua require'lspconfig'.yamlls.setup{on_attach=require'completion'.on_attach}
+lua require'lspconfig'.yamlls.setup{}
 
 " create a local list of errors when opening a buffer. :lnext :lprev :lopen
 fun! LspLocationList()
