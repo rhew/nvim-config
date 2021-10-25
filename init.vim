@@ -273,3 +273,9 @@ nmap <Leader>h :Limelight!!<CR>
 " Fountain config
 """
 au BufRead,BufNewFile *.fountain set filetype=fountain
+
+"""
+" vim-http config
+"""
+" don't create a new buffer for each request
+let g:vim_http_tempbuffer = 1
