@@ -39,15 +39,14 @@ vnoremap K :m '<-2<CR>gv=gv
 " plugins
 " Install vim-plug manager: https://github.com/junegunn/vim-plug#installation
 call plug#begin('~/.config/nvim/plugged')
-    " gruvbox
+    " gruvbox: just a color scheme. pretty
     Plug 'gruvbox-community/gruvbox'
 
     " lsp
     Plug 'neovim/nvim-lspconfig' " Start language servers
     Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
 
-    " completion
-    " Plug 'nvim-lua/completion-nvim' " Add autocomplete, hover, signature help
+    " nvim-cmp et. al.: Add autocomplete, hover, signature help
     Plug 'hrsh7th/nvim-cmp'
     Plug 'onsails/lspkind-nvim'
     Plug 'hrsh7th/cmp-buffer'
@@ -58,33 +57,38 @@ call plug#begin('~/.config/nvim/plugged')
     " recommended by jdtls: https://github.com/neovim/nvim-lspconfig/blob/master/CONFIG.md#jdtls
     " Plug 'mfussenegger/nvim-jdtls'
 
-    " telescope
+    " telescope: nice list view/preview for symbols, files, greps, etc.
     Plug 'nvim-lua/plenary.nvim'
     Plug 'nvim-telescope/telescope.nvim'
 
-    " ALE
+    " ALE: use whatever linters are available for the current buffer file type
     Plug 'dense-analysis/ale'
 
-    " Fugitive
+    " Fugitive: git. probably don't need this.
     Plug 'tpope/vim-fugitive'
 
-    " Devicons
+    " Dev icons: Assumes a patched font. Telescope and completion plugins use
+    " them. pretty
     Plug 'kyazdani42/nvim-web-devicons'
 
-    " markdown-preview
+    " markdown-preview: render markdown buffer (including planUML!) in browser
     " :MarkdownPreview
     Plug 'iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  }
 
-    " limelight - highligting
+    " limelight: highligting by space gaps. pretty
     " <leader> h toggles
     Plug 'junegunn/limelight.vim'
 
-    " Screenplay syntax
+    " Screenplay syntax: probably don't need this anymore
     Plug 'vim-scripts/fountain.vim'
 
-    " HTTP syntax and client (cURL)
+    " HTTP syntax and client (cURL): send current buffer as HTTP request and
+    " put response in a new buffer.
     " :Http sends the current .http buffer
     Plug 'nicwest/vim-http'
+
+    " Automagic tabs vs. spaces. Why does go fmt use tabs?? :(
+    Plug 'tpope/vim-sleuth'
 call plug#end()
 
 
@@ -143,7 +147,6 @@ cmp.setup {
     ['<C-e>'] = cmp.mapping.close(),
     ['<CR>'] = cmp.mapping.confirm {
       behavior = cmp.ConfirmBehavior.Replace,
-      select = true,
     },
     ['<Tab>'] = function(fallback)
       if cmp.visible() then
