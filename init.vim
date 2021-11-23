@@ -89,6 +89,8 @@ call plug#begin('~/.config/nvim/plugged')
 
     " Automagic tabs vs. spaces. Why does go fmt use tabs?? :(
     Plug 'tpope/vim-sleuth'
+
+    " TODO floaterm vim-test projectionist
 call plug#end()
 
 
