@@ -166,9 +166,9 @@ cmp.setup {
     end,
   },
   sources = { -- ordered by priority
+    { name = "nvim_lsp" },
     { name = "buffer" },
     { name = "path" },
-    { name = "nvim_lsp" },
   },
   formatting = {
     format = lspkind.cmp_format {
@@ -179,7 +179,7 @@ cmp.setup {
         path     = "[path]",
       }
     }
-}
+  }
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
