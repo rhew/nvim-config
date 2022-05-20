@@ -49,6 +49,10 @@ call plug#begin('~/.config/nvim/plugged')
     " gruvbox: just a color scheme. pretty
     Plug 'gruvbox-community/gruvbox'
 
+    " treesitter
+    Plug 'nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'}
+    Plug 'nvim-treesitter/playground'
+
     " lsp
     Plug 'williamboman/nvim-lsp-installer'
     Plug 'neovim/nvim-lspconfig' " Start language servers
