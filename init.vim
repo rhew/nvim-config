@@ -50,8 +50,8 @@ call plug#begin('~/.config/nvim/plugged')
     Plug 'gruvbox-community/gruvbox'
 
     " lsp
+    Plug 'williamboman/nvim-lsp-installer'
     Plug 'neovim/nvim-lspconfig' " Start language servers
-    Plug 'kabouzeid/nvim-lspinstall' " Add :LspInstall <tab for list>
 
     " nvim-cmp et. al.: Add autocomplete, hover, signature help
     Plug 'hrsh7th/nvim-cmp'
@@ -123,20 +123,21 @@ map <leader>pu :PlantUML<CR>
 
 
 """
-" kabouzeid/nvim-lspinstall  and nvim-lua/completion-nvim config
+" nvim-lsp-installer
+" nvim-lspconfig
 """
 
-lua << ENDLUA
--- Register configs for installed servers in lspconfig.
-require'lspinstall'.setup()
+lua require("nvim-lsp-installer").setup {}
 
--- Get list of installed servers and then setup each
--- server with lspconfig as usual.
-local servers = require'lspinstall'.installed_servers()
-for _, server in pairs(servers) do
-  require'lspconfig'[server].setup{}
-end
-ENDLUA
+lua require'lspconfig'.bashls.setup{}
+lua require'lspconfig'.dockerls.setup{}
+lua require'lspconfig'.gopls.setup{}
+lua require'lspconfig'.terraformls.setup{}
+lua require'lspconfig'.zk.setup{}
+lua require'lspconfig'.vimls.setup{}
+lua require'lspconfig'.yamlls.setup{}
+lua require'lspconfig'.jdtls.setup{}
+lua require'lspconfig'.pylsp.setup{}
 
 
 """
@@ -192,10 +193,6 @@ cmp.setup {
 local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 ENDLUA
-
-
-" yamlls doesn't start with the above code :(
-lua require'lspconfig'.yamlls.setup{}
 
 
 " nvim-lua/completion-nvim recommended settings
