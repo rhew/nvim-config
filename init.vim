@@ -34,6 +34,13 @@ nnoremap J mzJ`z
 " move highlighted text. gv is highlight, = is re-indent
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
+" my todo list: move line under cursor to another section
+nnoremap <leader>tc dd/^# CHORES<CR>jp<C-o>
+nnoremap <leader>td dd/^# DONE<CR>jp<C-o>
+nnoremap <leader>ti dd/^# INBOX<CR>jp<C-o>
+nnoremap <leader>to dd/^# OUTBOX<CR>jp<C-o>
+nnoremap <leader>tp dd/^# PAUSE<CR>jp<C-o>
+nnoremap <leader>tt dd/^# TODO<CR>jp<C-o>
 
 
 " plugins
