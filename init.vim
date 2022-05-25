@@ -17,6 +17,7 @@ set wildmenu
 set wildignore+=**/*.pyc
 set wildignore+=**/.git/*
 set wildmode=longest,list,full
+set termguicolors " https://github.com/gruvbox-community/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 
 
 " vim remaps
@@ -110,9 +111,11 @@ call plug#end()
 """
 
 " colorscheme must come before other coloring options like spell and lsp
+let g:gruvbox_italic=1
+let g:gruvbox_contrast_dark='hard'
 colorscheme gruvbox
-hi! Normal ctermbg=NONE guibg=NONE
-hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
+"hi! Normal ctermbg=NONE guibg=NONE
+"hi! NonText ctermbg=NONE guibg=NONE guifg=NONE ctermfg=NONE
 
 
 " spell
