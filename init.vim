@@ -19,6 +19,16 @@ set wildignore+=**/.git/*
 set wildmode=longest,list,full
 set termguicolors " https://github.com/gruvbox-community/gruvbox/wiki/Terminal-specific#0-recommended-neovimvim-true-color-support
 
+"Relative line numbers for active buffer
+set number
+
+augroup numbertoggle
+  autocmd!
+  autocmd BufEnter,FocusGained,InsertLeave,WinEnter * if &nu && mode() != "i" | set rnu   | endif
+  autocmd BufLeave,FocusLost,InsertEnter,WinLeave   * if &nu                  | set nornu | endif
+  autocmd TermOpen * setlocal nonumber norelativenumber
+augroup END
+
 
 " vim remaps
 
