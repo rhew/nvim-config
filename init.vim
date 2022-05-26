@@ -150,7 +150,6 @@ lua require'lspconfig'.bashls.setup{}
 lua require'lspconfig'.dockerls.setup{}
 lua require'lspconfig'.gopls.setup{}
 lua require'lspconfig'.terraformls.setup{}
-lua require'lspconfig'.zk.setup{}
 lua require'lspconfig'.vimls.setup{}
 lua require'lspconfig'.yamlls.setup{}
 lua require'lspconfig'.jdtls.setup{}
