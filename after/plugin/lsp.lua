@@ -68,34 +68,27 @@ local capabilities = vim.lsp.protocol.make_client_capabilities()
 capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
 
 
--- TODO convert to lua
+local map = require("utils").map
+
 -- nvim-lua/completion-nvim recommended settings
 -- Use <Tab> and <S-Tab> to navigate through popup menu
-vim.cmd [[
-  inoremap <expr> <Tab>   pumvisible() ? "\<C-n>" : "\<Tab>"
-  inoremap <expr> <S-Tab> pumvisible() ? "\<C-p>" : "\<S-Tab>"
-]]
+map("i", "<expr> <Tab>", "pumvisible() ? \"<C-n>\" : \"<Tab>\"")
+map("i", "<expr> <S-Tab>", "pumvisible() ? \"<C-p>\" : \"<S-Tab>\"")
 
--- Set completeopt to have a better completion experience
-vim.cmd [[
-  set completeopt=menuone,noinsert,noselect
-]]
+-- Set compileteopt to have a better completion experience
+vim.opt.completeopt = "menuone,noinsert,noselect"
 
 -- Avoid showing message extra message when using completion
-vim.cmd [[
-  set shortmess+=c
-]]
+vim.opt.shortmess:append("c")
 
-vim.cmd [[
-  nnoremap <C-]> :lua vim.lsp.buf.definition()<CR>
-  nnoremap gd :lua vim.lsp.buf.definition()<CR>
-  nnoremap <leader>li :lua vim.lsp.buf.implementation()<CR>
-  nnoremap <leader>lsh :lua vim.lsp.buf.signature_help()<CR>
-  nnoremap <leader>lrn :lua vim.lsp.buf.rename()<CR>
-  nnoremap <leader>lh :lua vim.lsp.buf.hover()<CR>
-  nnoremap <leader>lca :lua vim.lsp.buf.code_action()<CR>
-  nnoremap <leader>lsd :lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>
-  nnoremap <leader>ln :lua vim.lsp.diagnostic.goto_next()<CR>
-  nnoremap <leader>lp :lua vim.lsp.diagnostic.goto_prev()<CR>
-  " nnoremap <leader>lll :call LspLocationList()<CR>
-]]
+map("n", "<C-]>", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "gd", ":lua vim.lsp.buf.definition()<CR>")
+map("n", "<leader>li", ":lua vim.lsp.buf.implementation()<CR>")
+map("n", "<leader>lsh", ":lua vim.lsp.buf.signature_help()<CR>")
+map("n", "<leader>lrn", ":lua vim.lsp.buf.rename()<CR>")
+map("n", "<leader>lh", ":lua vim.lsp.buf.hover()<CR>")
+map("n", "<leader>lca", ":lua vim.lsp.buf.code_action()<CR>")
+map("n", "<leader>lsd", ":lua vim.lsp.diagnostic.show_line_diagnostics(); vim.lsp.util.show_line_diagnostics()<CR>")
+map("n", "<leader>ln", ":lua vim.lsp.diagnostic.goto_next()<CR>")
+map("n", "<leader>lp", ":lua vim.lsp.diagnostic.goto_prev()<CR>")
+-- nnoremap <leader>lll :call LspLocationList()<CR>
