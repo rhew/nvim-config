@@ -48,8 +48,9 @@ cmp.setup {
     end,
   },
   sources = { -- ordered by priority
+    { name = "nvim_lua" },
     { name = "nvim_lsp" },
-    { name = "buffer" },
+    { name = "buffer", keyword_length = 3 },
     { name = "path" },
   },
   formatting = {
@@ -57,6 +58,7 @@ cmp.setup {
       with_text = true,
       menu = {
         buffer   = "[buf]",
+        nvim_lua = "[Lua]",
         nvim_lsp = "[LSP]",
         path     = "[path]",
       }

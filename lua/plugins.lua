@@ -14,6 +14,7 @@ return require('packer').startup(function()
   use 'onsails/lspkind-nvim'
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
+  use 'hrsh7th/cmp-nvim-lua'
   use 'hrsh7th/cmp-nvim-lsp'
 
   use 'nvim-lua/plenary.nvim'
