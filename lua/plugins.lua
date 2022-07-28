@@ -23,6 +23,14 @@ return require('packer').startup(function()
 
   use 'gruvbox-community/gruvbox'
 
+  use 'nvim-treesitter/nvim-treesitter'
+
+  use 'mfussenegger/nvim-dap'
+  use 'leoluz/nvim-dap-go'
+  use 'rcarriga/nvim-dap-ui'
+  use 'theHamsta/nvim-dap-virtual-text'
+  use 'nvim-telescope/telescope-dap.nvim'
+
   -- :Git and git blame (<leader>gb)
   use 'tpope/vim-fugitive'
   use 'tveskag/nvim-blame-line'
