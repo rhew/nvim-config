@@ -26,6 +26,9 @@ return require('packer').startup(function()
 
   use 'nvim-treesitter/nvim-treesitter'
 
+  use 'saadparwaiz1/cmp_luasnip'
+  use 'L3MON4D3/LuaSnip'
+
   use 'mfussenegger/nvim-dap'
   use 'leoluz/nvim-dap-go'
   use 'rcarriga/nvim-dap-ui'

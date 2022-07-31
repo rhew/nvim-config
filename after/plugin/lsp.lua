@@ -47,7 +47,13 @@ cmp.setup {
       end
     end,
   },
+  snippet = {
+    expand = function(args)
+      require'luaasnip'.lsp_expand(args.body)
+    end
+  },
   sources = { -- ordered by priority
+    { name = "luasnip" },
     { name = "nvim_lua" },
     { name = "nvim_lsp" },
     { name = "buffer", keyword_length = 3 },
