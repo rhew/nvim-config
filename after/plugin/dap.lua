@@ -6,6 +6,8 @@ vim.keymap.set("n", "<leader>ds", ":lua require'dap'.step_over()<CR>")
 vim.keymap.set("n", "<leader>di", ":lua require'dap'.step_into()<CR>")
 vim.keymap.set("n", "<leader>do", ":lua require'dap'.step_out()<CR>")
 vim.keymap.set("n", "<leader>db", ":lua require'dap'.toggle_breakpoint()<CR>")
+vim.keymap.set("n", "<leader>dB", ":lua require'dap'.set_breakpoint(vim.fn.input('Breakpoint condition: '))<CR>")
+
 -- hover in a floating window. I like dapui.eval() better
 -- vim.keymap.set("n", "<leader>dh", ":lua require'dap.ui.widgets'.hover()<CR>")
 
