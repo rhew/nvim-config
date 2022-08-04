@@ -7,9 +7,9 @@ map("t", "<C-w>k", "<C-\\><C-n><C-w>k")
 map("t", "<C-w>l", "<C-\\><C-n><C-w>l")
 
 -- remaps to keep centered after search or join
-map("t", "n", "nzzzv")
-map("t", "N", "Nzzzv")
-map("t", "J", "mzJ`z")
+map("n", "n", "nzzzv")
+map("n", "N", "Nzzzv")
+map("n", "J", "mzJ`z")
 
 -- move selected text. gv is highlight, = is re-indent
 map("v", "J", ":m '>+1<CR>gv=gv")
