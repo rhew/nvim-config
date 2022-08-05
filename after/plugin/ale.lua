@@ -11,3 +11,4 @@ vim.cmd [[
   let g:ale_linters = {'go': ['gofmt', 'golint', 'gopls', 'govet', 'golangci-lint'] }
 ]]
 vim.g.ale_go_golangci_lint_options = ''
+vim.g.ale_go_golangci_lint_package = 1
