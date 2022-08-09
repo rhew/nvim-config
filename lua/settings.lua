@@ -12,6 +12,8 @@ vim.opt.autoindent = false
 vim.opt.cindent = false
 vim.opt.smartindent = false
 vim.opt.indentexpr = ""
+vim.wo.spell = true
+vim.opt.spelllang = "en_us"
 
 -- https://github.com/changemewtf/no_plugins/blob/master/no_plugins.vim
 -- FINDING FILES:
