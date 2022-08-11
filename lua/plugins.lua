@@ -26,6 +26,8 @@ return require('packer').startup(function()
 
   use 'nvim-treesitter/nvim-treesitter'
 
+  use 'akinsho/toggleterm.nvim'
+
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
 
