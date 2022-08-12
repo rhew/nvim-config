@@ -11,7 +11,7 @@ return require('packer').startup(function()
 
   -- nvim-cmp et. al.: Add autocomplete, hover, signature help
   use 'hrsh7th/nvim-cmp'
-  use 'onsails/lspkind-nvim'
+  use 'onsails/lspkind-nvim' -- pictograms
   use 'hrsh7th/cmp-buffer'
   use 'hrsh7th/cmp-path'
   use 'hrsh7th/cmp-nvim-lua'
