@@ -28,6 +28,8 @@ return require('packer').startup(function()
 
   use 'akinsho/toggleterm.nvim'
 
+  use('mrjones2014/smart-splits.nvim')
+
   use 'saadparwaiz1/cmp_luasnip'
   use 'L3MON4D3/LuaSnip'
 
