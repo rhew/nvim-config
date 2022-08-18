@@ -39,6 +39,8 @@ return require('packer').startup(function()
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
 
+  use { 'nvim-lualine/lualine.nvim', requires = { 'kyazdani42/nvim-web-devicons', opt = true } }
+
   -- :Git and git blame (<leader>gb)
   use 'tpope/vim-fugitive'
   use 'tveskag/nvim-blame-line'
