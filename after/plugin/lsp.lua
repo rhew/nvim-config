@@ -1,4 +1,18 @@
-require("nvim-lsp-installer").setup {}
+require("mason").setup()
+require("mason-lspconfig").setup({
+  ensure_installed = {
+    "bashls",
+    "dockerls",
+    "gopls",
+    "terraformls",
+    "vimls",
+    "yamlls",
+    -- "jdtls",
+    "pylsp",
+    "sumneko_lua",
+    "lua-language-server"
+  }
+})
 
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.dockerls.setup{}

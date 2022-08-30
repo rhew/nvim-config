@@ -5,9 +5,10 @@ return require('packer').startup(function()
   -- Automagic tabs vs. spaces
   use 'tpope/vim-sleuth'
 
-  -- lsp
-  use 'williamboman/nvim-lsp-installer'
-  use 'neovim/nvim-lspconfig' -- Start language servers
+  -- Language Server Protocol (LSP)
+  use 'williamboman/mason.nvim' -- install and manage LSP, DAP, linter, and formatter plugins
+  use 'williamboman/mason-lspconfig.nvim' -- help nvim-lspconfig find mason installed servers
+  use 'neovim/nvim-lspconfig' -- configure plugins
 
   -- nvim-cmp et. al.: Add autocomplete, hover, signature help
   use 'hrsh7th/nvim-cmp'
