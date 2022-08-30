@@ -35,7 +35,7 @@ return require('packer').startup(function()
   use 'L3MON4D3/LuaSnip'
 
   use 'mfussenegger/nvim-dap'
-  use 'leoluz/nvim-dap-go'
+  use 'leoluz/nvim-dap-go' -- configure delve
   use 'rcarriga/nvim-dap-ui'
   use 'theHamsta/nvim-dap-virtual-text'
   use 'nvim-telescope/telescope-dap.nvim'
