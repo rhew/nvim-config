@@ -6,6 +6,9 @@ map("t", "<C-w>j", "<C-\\><C-n><C-w>j")
 map("t", "<C-w>k", "<C-\\><C-n><C-w>k")
 map("t", "<C-w>l", "<C-\\><C-n><C-w>l")
 
+-- "Esc" from terminal insert mode
+vim.keymap.set('t', '<ESC>', [[<C-\><C-n>]])
+
 -- remaps to keep centered after search or join
 map("n", "n", "nzzzv")
 map("n", "N", "Nzzzv")
