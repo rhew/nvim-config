@@ -28,3 +28,9 @@ vim.opt.wildignore:append("**/.git/*")
 vim.opt.wildmode = "longest,list,full"
 
 vim.g.mapleader = " "
+
+-- enable markdown folding -- todo: required buffer reload; toggle back doesn't work
+vim.keymap.set("n", "<Leader>zm", function() vim.g.markdown_folding = not(vim.g.markdown_folding) end )
+-- next and previous fold
+vim.keymap.set("n", "<Leader>zj", "zczjzoz<CR>")
+vim.keymap.set("n", "<Leader>zk", "zczkzozkjz<CR>")
