@@ -46,6 +46,9 @@ return require('packer').startup(function()
   use 'tpope/vim-fugitive'
   use 'tveskag/nvim-blame-line'
 
+  -- align things like markdown tables
+  use 'junegunn/vim-easy-align'
+
   -- Dev icons: Assumes a patched font. Telescope and completion plugins use them
   use 'kyazdani42/nvim-web-devicons'
 
