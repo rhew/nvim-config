@@ -15,6 +15,7 @@ vim.opt.indentexpr = ""
 vim.wo.spell = true
 vim.opt.spelllang = "en_us"
 vim.opt.laststatus = 3
+vim.opt.cmdheight = 0
 
 -- https://github.com/changemewtf/no_plugins/blob/master/no_plugins.vim
 -- FINDING FILES:
