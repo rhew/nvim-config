@@ -9,8 +9,7 @@ require("mason-lspconfig").setup({
     "yamlls",
     -- "jdtls",
     "pylsp",
-    "sumneko_lua",
-    "lua-language-server"
+    "sumneko_lua"
   }
 })
 
@@ -87,7 +86,7 @@ cmp.setup {
 }
 
 local capabilities = vim.lsp.protocol.make_client_capabilities()
-capabilities = require('cmp_nvim_lsp').update_capabilities(capabilities)
+capabilities = require('cmp_nvim_lsp').default_capabilities(capabilities)
 
 
 local map = require("utils").map
