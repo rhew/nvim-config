@@ -9,7 +9,7 @@ require("mason-lspconfig").setup({
     "yamlls",
     -- "jdtls",
     "pylsp",
-    "sumneko_lua"
+    "lua_ls"
   }
 })
 
@@ -21,7 +21,7 @@ require'lspconfig'.vimls.setup{}
 require'lspconfig'.yamlls.setup{}
 require'lspconfig'.jdtls.setup{}
 require'lspconfig'.pylsp.setup{}
-require'lspconfig'.sumneko_lua.setup{
+require'lspconfig'.lua_ls.setup{
   settings = {
     Lua = {
       diagnostics = {
