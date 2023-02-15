@@ -23,6 +23,8 @@ return require('packer').startup(function()
 
   use 'dense-analysis/ale'
 
+  use 'tpope/vim-commentary'
+
   use 'gruvbox-community/gruvbox'
 
   use 'nvim-treesitter/nvim-treesitter'
