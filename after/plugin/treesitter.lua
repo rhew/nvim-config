@@ -9,6 +9,7 @@ require'nvim-treesitter.configs'.setup {
     "go",
     "help",
     "lua",
+    "markdown",
     "python",
     "terraform",
     "vim",
