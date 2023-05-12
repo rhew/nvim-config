@@ -4,6 +4,7 @@ require("mason-lspconfig").setup({
     "bashls",
     "dockerls",
     "gopls",
+    "jsonnet_ls",
     "terraformls",
     "vimls",
     "yamlls",
@@ -16,10 +17,11 @@ require("mason-lspconfig").setup({
 require'lspconfig'.bashls.setup{}
 require'lspconfig'.dockerls.setup{}
 require'lspconfig'.gopls.setup{}
+require'lspconfig'.jsonnet_ls.setup{}
 require'lspconfig'.terraformls.setup{}
 require'lspconfig'.vimls.setup{}
 require'lspconfig'.yamlls.setup{}
-require'lspconfig'.jdtls.setup{}
+-- require'lspconfig'.jdtls.setup{}
 require'lspconfig'.pylsp.setup{}
 require'lspconfig'.lua_ls.setup{
   settings = {
