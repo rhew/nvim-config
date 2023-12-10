@@ -22,7 +22,17 @@ require'lspconfig'.terraformls.setup{}
 require'lspconfig'.vimls.setup{}
 require'lspconfig'.yamlls.setup{}
 -- require'lspconfig'.jdtls.setup{}
-require'lspconfig'.pylsp.setup{}
+require'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          maxLineLength = 100
+        }
+      }
+    }
+  }
+}
 require'lspconfig'.lua_ls.setup{
   settings = {
     Lua = {
