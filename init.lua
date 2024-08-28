@@ -252,6 +252,14 @@ require('lazy').setup({
     end
   },
 
+  {
+    'junegunn/vim-easy-align',
+    config = function()
+      vim.api.nvim_set_keymap('n', 'ga', '<Plug>(EasyAlign)', {})
+      vim.api.nvim_set_keymap('x', 'ga', '<Plug>(EasyAlign)', {})
+    end
+  },
+
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
 
