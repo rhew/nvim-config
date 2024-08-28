@@ -236,6 +236,21 @@ require('lazy').setup({
       vim.cmd("WritegoodEnable")
     end
   },
+  { 'akinsho/toggleterm.nvim',
+    --- cmd = {
+    ---   'ToggleTerm',
+    ---   'ToggleTermSendCurrentLine',
+    ---   'ToggleTermSendVisualSelection',
+    --- },
+    --- keys = { '<C-\\>' },
+    opts = {
+      open_mapping = [[<c-\>]]
+    },
+    config = function(_, opts)
+      require('toggleterm').setup(opts)
+      vim.keymap.set('v', '<C-\\>', ':ToggleTermSendVisualSelection<CR>')
+    end
+  },
 
   -- NOTE: Plugins can be added with a link (or for a github repo: 'owner/repo' link).
   'tpope/vim-sleuth', -- Detect tabstop and shiftwidth automatically
