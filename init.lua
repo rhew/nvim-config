@@ -1,3 +1,8 @@
+if vim.g.vscode then
+    -- VSCode extension
+else
+    -- ordinary Neovim
+
 --[[
 
 =====================================================================
@@ -235,6 +240,10 @@ require('lazy').setup({
     config = function()
       vim.cmd("WritegoodEnable")
     end
+  },
+  {
+    'Exafunction/codeium.vim',
+    event = 'BufEnter'
   },
   { 'akinsho/toggleterm.nvim',
     --- cmd = {
@@ -657,6 +666,19 @@ require('lazy').setup({
           end,
         },
       }
+
+      -- Set pylsp pycodestyle plugin ling length for python to 100 --
+      require('lspconfig').pylsp.setup {
+        settings = {
+          pylsp = {
+            plugins = {
+              pycodestyle = {
+                maxLineLength = 100,
+              },
+            },
+          },
+        },
+      }
     end,
   },
 
@@ -945,3 +967,5 @@ require('lazy').setup({
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
+--
+end
