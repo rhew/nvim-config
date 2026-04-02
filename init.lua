@@ -11,7 +11,6 @@ vim.g.have_nerd_font = true
 vim.cmd.colorscheme("retrobox")
 
 -- Core behavior
-vim.opt.ts = 4
 vim.opt.swapfile = false
 vim.opt.undofile = true
 vim.opt.mouse = 'a'
