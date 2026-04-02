@@ -34,13 +34,26 @@ vim.lsp.config("lua_ls", {
   },
 })
 
+local missing_ts_notified = {}
+
 -- enable treesitter highlighting when opening a file ¯\_(ツ)_/¯
 vim.api.nvim_create_autocmd("FileType", {
   callback = function(args)
     local ft = vim.bo[args.buf].filetype
-    if pcall(vim.treesitter.get_parser, args.buf, ft) then
-      vim.treesitter.start(args.buf, ft)
+    local lang = vim.treesitter.language.get_lang(ft) or ft
+    if pcall(vim.treesitter.start, args.buf, lang) then
+      return
     end
+    if lang == "" or missing_ts_notified[lang] then
+      return
+    end
+    missing_ts_notified[lang] = true
+    vim.schedule(function()
+      vim.notify(
+        ("No Treesitter parser for %s. Install with :TSInstall %s"):format(lang, lang),
+        vim.log.levels.INFO
+      )
+    end)
   end,
 })
 
