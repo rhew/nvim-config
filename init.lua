@@ -17,7 +17,7 @@ vim.opt.mouse = 'a'
 vim.g.mapleader = " "
 vim.opt.splitright = true
 vim.opt.splitbelow = true
-vim.opt_local.spell = true
+vim.opt.spell = true
 vim.opt.spelllang = "en"
 
 -- Don't warn on Lua config files for Neovim
